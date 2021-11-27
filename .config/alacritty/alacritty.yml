@@ -1,0 +1,17 @@
+font:
+    normal:
+        family: MesloLGS NF
+
+    italic:
+        family: MesloLGS NF
+
+    bold:
+        family: MesloLGS NF
+
+    size: 16
+
+background_opacity: 0.85
+
+key_bindings:
+    - { key: K,  mods: Control, action: IncreaseFontSize }
+    - { key: J,  mods: Control, action: DecreaseFontSize }
