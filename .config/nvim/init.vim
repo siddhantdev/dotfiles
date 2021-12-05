@@ -27,6 +27,7 @@ set cursorline
 
 autocmd InsertEnter * norm zz
 
+
 set termguicolors
 
 set nohls
@@ -88,7 +89,6 @@ nnoremap <Tab> %
 
 call plug#begin()
 
-Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
 Plug 'preservim/nerdtree'
 Plug 'jiangmiao/auto-pairs'
@@ -96,12 +96,12 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'ap/vim-css-color'
 Plug 'tpope/vim-commentary'
 Plug 'junegunn/goyo.vim'
-Plug 'arcticicestudio/nord-vim'
+Plug 'catppuccin/nvim'
+Plug 'nvim-lualine/lualine.nvim'
 
 call plug#end()
 
-colorscheme nord
-let g:airline_theme='nord'
+colorscheme catppuccin
 
 nnoremap <leader>c :NERDTreeToggle<cr>
 nnoremap <leader>f :NERDTreeFocus<cr>
@@ -112,3 +112,29 @@ let g:gitgutter_map_keys = 0
 let g:webdevicons_conceal_nerdtree_brackets = 1
 
 nnoremap <leader>g :Goyo<cr>
+
+lua << END
+require'lualine'.setup {
+    options = {
+        theme = 'catppuccin',
+        section_separators = ' ',
+        component_separators = '|'
+    },
+    sections = {
+        lualine_a = {'mode'},
+        lualine_b = {'branch', 'diff'},
+        lualine_c = {'filename'},
+        lualine_x = {'filetype'},
+        lualine_y = {'progress'},
+        lualine_z = {'location'}
+    },
+    inactive_sections = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = {'filename'},
+        lualine_x = {'location'},
+        lualine_y = {},
+        lualine_z = {}
+    }
+}
+END
