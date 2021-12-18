@@ -27,7 +27,6 @@ set cursorline
 
 autocmd InsertEnter * norm zz
 
-
 set termguicolors
 
 set nohls
@@ -68,7 +67,7 @@ nnoremap S :%s//g<Left><Left>
 " Compiling shortcuts
 autocmd filetype cpp nnoremap <buffer> <F4> :!g++ -o %:r.out % -std=c++14 -Wall -Wextra -Wshadow -O2<cr>
 autocmd filetype cpp nnoremap <buffer> <F5> :!g++ -o %:r.out % -std=c++17 -Wall -Wextra -Wshadow -O2<cr>
-autocmd filetype markdown nnoremap <buffer> <F5> :!pandoc -f markdown % -o %:r.pdf<cr>
+autocmd filetype markdown nnoremap <buffer> <F5> :!pandoc -f markdown % -o %:r.pdf --highlight-style=tango<cr>
 autocmd filetype java nnoremap <buffer> <F5> :!javac %<cr>
 
 " Execution shortcuts
