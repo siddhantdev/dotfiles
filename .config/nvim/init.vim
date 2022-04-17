@@ -113,6 +113,9 @@ let g:webdevicons_conceal_nerdtree_brackets = 1
 nnoremap <leader>g :Goyo<cr>
 
 lua << END
+local function getWords()
+    return tostring(vim.fn.wordcount().words)
+end
 require'lualine'.setup {
     options = {
         theme = 'catppuccin',
@@ -124,7 +127,7 @@ require'lualine'.setup {
         lualine_b = {'branch', 'diff'},
         lualine_c = {'filename'},
         lualine_x = {'filetype'},
-        lualine_y = {'progress'},
+        lualine_y = { { getWords }, 'progress'},
         lualine_z = {'location'}
     },
     inactive_sections = {
