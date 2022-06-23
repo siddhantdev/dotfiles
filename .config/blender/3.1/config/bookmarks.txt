@@ -1,0 +1,4 @@
+[Bookmarks]
+/home/siddhant/Documents/Materials/
+/home/siddhant/Documents/Blender Projects/
+/home/siddhant/Pictures/References/
